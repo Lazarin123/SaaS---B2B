@@ -1,75 +1,220 @@
-# React + TypeScript + Vite
+# SaaS B2B Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="./public/logo.png" width="120" alt="SaaS B2B Logo"/>
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  Plataforma SaaS moderna para gestão de clientes, empresas, projetos e operações comerciais.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<p align="center">
+  <a href="https://github.com/Lazarin123/SaaS---B2B"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Status-FINALIZADO-2563EB?style=for-the-badge"></a>
+  <img src="https://img.shields.io/badge/License-MIT-059669?style=for-the-badge">
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sobre o projeto
 
-## Expanding the ESLint configuration
+O **SaaS B2B Platform** é uma aplicação Full Stack desenvolvida para empresas que desejam centralizar seus processos comerciais em um único ambiente.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A plataforma oferece uma experiência moderna em **Dark Mode**, arquitetura escalável e interface responsiva, permitindo o gerenciamento de clientes, equipes, indicadores e fluxos operacionais.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Projeto desenvolvido por **Samuel Lazarin** como portfólio profissional e base para soluções SaaS empresariais.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Demonstração
 
+| Ambiente    | Link                                     |
+| ----------- | ---------------------------------------- |
+| Repositório | https://github.com/Lazarin123/SaaS---B2B |
+| Web App     | Em breve                                 |
+
+---
+
+## Funcionalidades
+
+- Dashboard executivo em tempo real
+- Gestão de clientes (CRM)
+- Cadastro de empresas e contatos
+- Indicadores e métricas
+- Sistema de autenticação
+- Perfis de usuários
+- Interface totalmente responsiva
+- Dark Mode premium
+- Arquitetura preparada para APIs
+- Componentização com React + TypeScript
+
+---
+
+## Tecnologias
+
+### Front-end
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
+
+### Back-end
+
+- Node.js
+- Express
+- REST API
+
+### Banco de Dados
+
+- PostgreSQL
+- Prisma ORM
+
+### Ferramentas
+
+- Git & GitHub
+- ESLint
+- Prettier
+- Vercel
+
+---
+
+## Estrutura do projeto
+
+```text
+SaaS---B2B/
+│
+├── public/
+├── docs/
+│   ├── dashboard.png
+│   └── mockup.png
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── layouts/
+│   ├── hooks/
+│   ├── services/
+│   ├── context/
+│   ├── routes/
+│   ├── styles/
+│   └── utils/
+│
+├── prisma/
+├── server/
+├── .env.example
+├── package.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Instalação
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone o projeto
 
+```bash
+git clone https://github.com/Lazarin123/SaaS---B2B.git
 ```
+
+### 2. Entre na pasta
+
+```bash
+cd SaaS---B2B
+```
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+### 4. Configure as variáveis
+
+Crie um arquivo `.env` baseado no `.env.example`.
+
+```env
+DATABASE_URL=
+JWT_SECRET=
+VITE_API_URL=
+```
+
+### 5. Execute
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Roadmap
+
+- [x] Estrutura inicial
+- [x] Dashboard
+- [x] Layout responsivo
+- [ ] Login JWT
+- [ ] Multiempresa
+- [ ] Gestão de usuários
+- [ ] Permissões (RBAC)
+- [ ] Notificações
+- [ ] Auditoria de ações
+- [ ] Integração com IA
+- [ ] Aplicativo Mobile
+
+---
+
+## Arquitetura
+
+```text
+ React + Vite
+       │
+ REST API
+       │
+ Node.js + Express
+       │
+ Prisma ORM
+       │
+ PostgreSQL
+```
+
+---
+
+## Boas práticas
+
+- Arquitetura escalável
+- Componentes reutilizáveis
+- Tipagem completa com TypeScript
+- Organização por módulos
+- Código limpo (Clean Code)
+- Responsividade Mobile First
+
+---
+
+## Autor
+
+### Samuel Lazarin
+
+Desenvolvedor Full Stack | QA Automation | Software Engineer
+
+- GitHub: https://github.com/Lazarin123
+- LinkedIn: https://linkedin.com/in/samuel-lazarin
+
+---
+
+## Licença
+
+Este projeto está sob a licença **MIT**.
+
+---
+
+<p align="center">
+  Desenvolvido por <strong>Samuel Lazarin</strong>
+</p>

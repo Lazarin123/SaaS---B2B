@@ -1,0 +1,314 @@
+:root {
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --primary: #d97706;
+  --primary-hover: #b45309;
+  --sidebar-bg: #0f172a;
+  --sidebar-text: #94a3b8;
+  --sidebar-active: #ffffff;
+  --table-header-bg: #f1f5f9;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --primary: #f59e0b;
+  --primary-hover: #d97706;
+  --sidebar-bg: #020617;
+  --sidebar-text: #64748b;
+  --sidebar-active: #f8fafc;
+  --table-header-bg: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.2s ease;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    padding: 2rem;
+    flex: 1;
+  }
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__brand {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-left: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    color: var(--sidebar-text);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+
+    &:hover, &--active {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--sidebar-active);
+    }
+  }
+}
+
+.header {
+  height: 64px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.dashboard {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+
+    &-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    &-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--text-main);
+    }
+
+    &-change {
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+
+      &--positive { color: #10b981; }
+      &--neutral { color: var(--text-muted); }
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s;
+
+  &--primary {
+    background-color: var(--primary);
+    color: #ffffff;
+    &:hover { background-color: var(--primary-hover); }
+  }
+
+  &--secondary {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-main);
+    &:hover { background-color: var(--table-header-bg); }
+  }
+
+  &--outline {
+    background: transparent;
+    border-color: var(--border-color);
+    color: var(--text-main);
+    &:hover { background-color: var(--table-header-bg); }
+  }
+}
+
+.table-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+
+  th, td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  th {
+    background-color: var(--table-header-bg);
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  &--aguardando-aprovação { background: #fef3c7; color: #92400e; }
+  &--aprovado, &--em-andamento { background: #dbeafe; color: #1e40af; }
+  &--concluído { background: #d1fae5; color: #065f46; }
+  &--recusado, &--cancelado { background: #fee2e2; color: #991b1b; }
+}
+
+.portal-view {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--bg-card);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    input, select, textarea {
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+    }
+  }
+}
+
+/* Regras Estritas de Impressão de O.S. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

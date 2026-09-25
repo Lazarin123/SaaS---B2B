@@ -31,7 +31,6 @@ A plataforma oferece uma experiência moderna em **Dark Mode**, arquitetura esca
 | Ambiente    | Link                                     |
 | ----------- | ---------------------------------------- |
 | Repositório | https://github.com/Lazarin123/SaaS---B2B |
-| Web App     | Em breve                                 |
 
 ---
 

@@ -1,10 +1,6 @@
 # SaaS B2B Platform
 
 <p align="center">
-  <img src="./public/logo.png" width="120" alt="SaaS B2B Logo"/>
-</p>
-
-<p align="center">
   Plataforma SaaS moderna para gestão de clientes, empresas, projetos e operações comerciais.
 </p>
 
